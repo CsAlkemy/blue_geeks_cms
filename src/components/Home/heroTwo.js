@@ -9,11 +9,17 @@ const hero = () => {
   return (
     <div className="pb-10">
       <section className="w-11/12 lg:w-8/12 mx-auto pb-5">
-        <div className="grid grid-cols-3 grid-rows-3 gap-2">
-          <div className="bg-green-500 col-span-1">a</div>
-          <div className="bg-indigo-500 row-span-2">d</div>
-          <div className="bg-cyan-500 row-span-2 ">c</div>
-          <div className="bg-red-500 row-span-1">b</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 border-0 border-cyan-500 md:border-2 border-t-0 md:border-t-0">
+          <div className="bg-green-500 order-first md:order-none col-span-1">
+            image
+          </div>
+          <div className="bg-cyan-500  order-last md:order-none row-span-2 ">
+            Image
+          </div>
+          <div className="bg-indigo-500  order-last md:order-none row-span-2">
+            Text
+          </div>
+          <div className="bg-red-500  row-span-1">text</div>
         </div>
       </section>
     </div>

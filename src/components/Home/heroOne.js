@@ -9,18 +9,18 @@ const hero = () => {
   return (
     <div className="pt-10">
       <section className="w-11/12 lg:w-8/12 mx-auto pt-5">
-        <div className="grid grid-rows-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 border-0 border-b-0 sm:border-2 border-cyan-500">
+        <div className="grid grid-rows-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 border-0 border-b-0 md:border-2 border-cyan-500 gap-y-4 md:gap-y-0">
           <div className="row-span-3 ">
             <img
               src={WordpressImage}
               alt="wordpress on laptop"
-              className=" object-contain md:object-scale-down h-auto w-full rounded-lg md:rounded-none"
+              className="max-h-64 h-full w-full rounded-lg md:rounded-none"
             />
           </div>
-          <div className="row-span-3 border-r-0 sm:border-r-2 border-cyan-500">
+          <div className="row-span-3 border-r-0 md:border-r-2 border-cyan-500">
             <div className="px-3 pt-2 text-white">
               <Link to="/">
-                <h1 className="uppercase text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-tight   hover:text-cyan-500">
+                <h1 className="uppercase text-2xl lg:text-2xl xl:text-4xl font-medium tracking-tight  hover:text-cyan-500">
                   {" "}
                   Build Your website using Wordpress in 10 minutes.
                 </h1>
@@ -33,7 +33,7 @@ const hero = () => {
           <div className="col-span-1 mt-10 sm:mt-0">
             <img
               src={VpnImage}
-              className="max-h-28 h-full w-full object-cover rounded-lg md:rounded-none"
+              className="max-h-36 h-36 sm:max-h-28 md:h-28 w-full object-cover rounded-lg md:rounded-none"
               alt="best vpn poster"
             />
           </div>

@@ -46,15 +46,15 @@ const recents = () => {
     <>
       {blogList.map(item => (
         <Link to={item.link} key={item.id}>
-          <div class="grid grid-cols-5 sm:grid-cols-4 py-3 transform hover:-translate-y-1 duration-75 hover:shadow-md">
-            <div class="col-span-2 sm:col-span-1">
+          <div className="grid grid-cols-5 sm:grid-cols-4 py-3 transform hover:-translate-y-1 duration-75 hover:shadow-md">
+            <div className="col-span-2 sm:col-span-1">
               <img
                 className="h-40 max-h-40 w-full object-cover"
                 src="https://images.unsplash.com/photo-1552548329-64471f10571f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80"
                 alt="Blog poster"
               />
             </div>
-            <div class="col-span-3 bg-white p-3 ">
+            <div className="col-span-3 bg-white p-3 ">
               <h1 className="text-xl font-semibold hover:text-cyan-500 hover:underline mb-3">
                 {item.title}
               </h1>

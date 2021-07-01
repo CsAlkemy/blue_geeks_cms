@@ -12,11 +12,11 @@ const recents = () => {
             Recents
           </h1>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-4 grid-rows-1 gap-y-4 sm:gap-2">
-          <div class="col-span-3 ">
+        <div className="grid grid-cols-1 sm:grid-cols-4 grid-rows-1 gap-y-4 sm:gap-2">
+          <div className="col-span-3 ">
             <Cards />
           </div>
-          <div class="bg-white my-3">
+          <div className="bg-white my-3">
             <Sponsor />
           </div>
         </div>

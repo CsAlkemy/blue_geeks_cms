@@ -52,7 +52,7 @@ const card = () => {
         <Link
           key={item.id}
           to={item.to}
-          className="bg-white shadow-md mx-auto transform hover:-translate-y-3 duration-300 hover:shadow-xl w-full xl:w-10/12"
+          className="bg-white shadow-md mx-auto transform hover:-translate-y-3 duration-300 hover:shadow-xl w-11/12 xl:w-10/12"
         >
           <img
             src={item.Image}
@@ -60,7 +60,9 @@ const card = () => {
             alt="card poster"
           />
           <div className="p-3">
-            <h1 className="text-lg font-bold">{item.title}</h1>
+            <h1 className="text-lg font-bold hover:text-cyan-500">
+              {item.title}
+            </h1>
             <p className="text-sm text-justify text-gray-600">
               {item.subtitle}
             </p>

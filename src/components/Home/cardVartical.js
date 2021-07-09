@@ -39,6 +39,38 @@ const blogList = [
     image: ThemeImage,
     link: "/",
   },
+  {
+    id: 5,
+    title: "Title 5",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, necessitatibus.",
+    image: PresentationImage,
+    link: "/",
+  },
+  {
+    id: 6,
+    title: "Title 6",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, necessitatibus.",
+    image: VpnImage,
+    link: "/",
+  },
+  {
+    id: 7,
+    title: "Title 7",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, necessitatibus.",
+    image: WordpressImage,
+    link: "/",
+  },
+  {
+    id: 8,
+    title: "Title 8",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, necessitatibus.",
+    image: ThemeImage,
+    link: "/",
+  },
 ]
 
 const recents = () => {

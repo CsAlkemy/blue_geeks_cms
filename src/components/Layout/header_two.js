@@ -6,80 +6,91 @@ import { Link } from "gatsby"
 import { HiOutlineUser, HiOutlineSearch } from "react-icons/hi"
 
 import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorClickIcon,
+  TerminalIcon,
+  TemplateIcon,
   MenuIcon,
-  RefreshIcon,
+  VideoCameraIcon,
   ShieldCheckIcon,
   SupportIcon,
-  ViewGridIcon,
+  LightBulbIcon,
   XIcon,
 } from "@heroicons/react/outline"
-import { ChevronDownIcon } from "@heroicons/react/solid"
+import {
+  ChevronDownIcon,
+  CodeIcon,
+  FingerPrintIcon,
+  QuestionMarkCircleIcon,
+  UserGroupIcon,
+} from "@heroicons/react/solid"
 
-const solutions = [
+const blogItems = [
   {
-    name: "Analytics",
+    name: "Website",
+    href: "#",
     description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "#",
-    icon: ChartBarIcon,
+      "Website building tools like wordpress, wix, squarespace, weebly, domain, hosting, etc.",
+    icon: TerminalIcon,
   },
   {
-    name: "Engagement",
-    description: "Speak directly to your customers in a more meaningful way.",
+    name: "VPN",
     href: "#",
-    icon: CursorClickIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers' data will be safe and secure.",
-    href: "#",
+    description:
+      "Reviews, comparison between the virtual proxy network out there. And list of best VPN.",
     icon: ShieldCheckIcon,
   },
   {
-    name: "Integrations",
-    description: "Connect with third-party tools that you're already using.",
+    name: "Themes",
     href: "#",
-    icon: ViewGridIcon,
+    description:
+      "Reviews and listing of top themes for wordpress, html & CSS and Admin themes.",
+    icon: TemplateIcon,
   },
   {
-    name: "Automations",
-    description:
-      "Build strategic funnels that will drive your customers to convert",
+    name: "Digital Product",
     href: "#",
-    icon: RefreshIcon,
+    description:
+      "In depth review and comparison of some digital product like envato elements, Windows.",
+    icon: LightBulbIcon,
+  },
+  {
+    name: "Tubebuddy",
+    href: "#",
+    description:
+      "Tube Buddy Can Help You Manage, Optimize, And Grow Your Channel.",
+    icon: VideoCameraIcon,
+  },
+  {
+    name: "Hardware and sofware",
+    href: "#",
+    description:
+      "Other software and hardware that helps we do our day to day task.",
+    icon: FingerPrintIcon,
   },
 ]
 const resources = [
   {
-    name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
+    name: "FQA",
+    description: "",
+    href: "#",
+    icon: QuestionMarkCircleIcon,
+  },
+  {
+    name: "Forum",
+    description: "",
+    href: "#",
+    icon: UserGroupIcon,
+  },
+  {
+    name: "Help",
+    description: "",
     href: "#",
     icon: SupportIcon,
   },
   {
-    name: "Guides",
-    description:
-      "Learn how to maximize our platform to get the most out of it.",
+    name: "Programming",
+    description: "",
     href: "#",
-    icon: BookmarkAltIcon,
-  },
-  {
-    name: "Events",
-    description:
-      "See what meet-ups and other events we might be planning near you.",
-    href: "#",
-    icon: CalendarIcon,
-  },
-  {
-    name: "Security",
-    description: "Understand how we take your privacy seriously.",
-    href: "#",
-    icon: ShieldCheckIcon,
+    icon: CodeIcon,
   },
 ]
 
@@ -148,7 +159,7 @@ export default function Example() {
                           >
                             <div className="rounded-lg shadow-lg ring-1 ring-white ring-opacity-5 overflow-hidden">
                               <div className="relative grid gap-6 bg-background px-5 py-6 sm:gap-8 sm:p-8">
-                                {solutions.map(item => (
+                                {blogItems.map(item => (
                                   <Link
                                     to=""
                                     key={item.name}
@@ -163,7 +174,7 @@ export default function Example() {
                                       <p className="text-base font-medium text-gray-50">
                                         {item.name}
                                       </p>
-                                      <p className="mt-1 text-sm text-gray-200">
+                                      <p className="text-sm font-light text-gray-200">
                                         {item.description}
                                       </p>
                                     </div>
@@ -230,7 +241,7 @@ export default function Example() {
                         >
                           <Popover.Panel
                             static
-                            className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0"
+                            className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 max-w-screen-lg sm:px-0"
                           >
                             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                               <div className="relative grid gap-6 bg-background px-5 py-6 sm:gap-8 sm:p-8">
@@ -308,7 +319,7 @@ export default function Example() {
                     </div>
                     <div className="mt-6">
                       <nav className="grid gap-y-8">
-                        {solutions.map(item => (
+                        {blogItems.map(item => (
                           <Link
                             to=""
                             key={item.name}

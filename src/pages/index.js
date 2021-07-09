@@ -6,6 +6,7 @@ import Hero from "../components/Home/heroOne"
 import HeroTwo from "../components/Home/heroTwo"
 import Feature from "../components/Home/features"
 import Recents from "../components/Home/recents"
+import ViewedPost from "../components/Home/viewedPost"
 
 const IndexPage = () => (
   <Layout>
@@ -15,6 +16,11 @@ const IndexPage = () => (
       <HeroTwo />
       <Feature />
       <Recents />
+      <ViewedPost />
+      {/* TO DO
+        **Newsletter
+        Call to action ..follow design after some research.
+       */}
     </>
   </Layout>
 )

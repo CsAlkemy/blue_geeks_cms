@@ -7,6 +7,7 @@ import HeroTwo from "../components/Home/heroTwo"
 import Feature from "../components/Home/features"
 import Recents from "../components/Home/recents"
 import ViewedPost from "../components/Home/viewedPost"
+import Newsletter from "../components/Home/emailList"
 
 const IndexPage = () => (
   <Layout>
@@ -17,10 +18,7 @@ const IndexPage = () => (
       <Feature />
       <Recents />
       <ViewedPost />
-      {/* TO DO
-        **Newsletter
-        Call to action ..follow design after some research.
-       */}
+      <Newsletter />
     </>
   </Layout>
 )

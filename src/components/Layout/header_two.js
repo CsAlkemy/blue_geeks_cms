@@ -107,7 +107,7 @@ export default function Example() {
             <div className="w-full lg:w-8/12 mx-auto px-4 sm:px-6">
               <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
                 <div className="flex justify-start lg:w-0 lg:flex-1">
-                  <Link to="">
+                  <Link to="/">
                     <h1 className="text-3xl tracking-wider text-white">
                       <span className="font-extrabold">TECH</span>
                       <span className="text-cyan-500 font-light">REV</span>
@@ -189,8 +189,7 @@ export default function Example() {
                   </Popover>
 
                   <Link
-                    to=""
-                    href="#"
+                    to="/blog"
                     className="text-base font-medium hover:text-cyan-500 text-white"
                   >
                     TECH

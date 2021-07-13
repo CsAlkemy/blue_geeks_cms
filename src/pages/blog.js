@@ -2,17 +2,12 @@ import * as React from "react"
 
 import Layout from "../components/Layout/layout"
 import Seo from "../components/seo"
-import Feature from "../components/Home/features"
-import Recents from "../components/Home/recents"
-import Newsletter from "../components/Home/emailList"
+import Blog from "../components/Blog/blogParent"
 
-const BlogPage = () => (
+const blog = () => (
   <Layout>
-    <Seo title="Blog" />
-    <Feature />
-    <Recents />
-    <Newsletter />
+    <Seo title="Blog-Title" />
+    <Blog />
   </Layout>
 )
-
-export default BlogPage
+export default blog

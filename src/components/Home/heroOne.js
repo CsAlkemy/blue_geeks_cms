@@ -19,7 +19,7 @@ const hero = () => {
           </div>
           <div className="row-span-3 border-r-0 md:border-r-2 border-cyan-500">
             <div className="px-3 pt-2 text-white">
-              <Link to="/">
+              <Link to="/blog">
                 <h1 className="uppercase text-2xl lg:text-2xl xl:text-4xl font-medium tracking-tight  hover:text-cyan-500">
                   {" "}
                   Build Your website using Wordpress in 10 minutes.

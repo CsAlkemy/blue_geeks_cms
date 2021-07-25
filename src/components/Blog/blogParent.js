@@ -1,8 +1,8 @@
 import React from "react"
 
 import Title from "../Blog/title"
-import BlogContent from "../Blog/blogContent"
-import BlogSidebar from "../Blog/blogSidebar"
+// import BlogContent from "../Blog/blogContent"
+// import BlogSidebar from "../Blog/blogSidebar"
 
 const blogParent = () => {
   return (
@@ -51,7 +51,7 @@ const blogParent = () => {
               nesciunt officia magnam, ab, sapiente expedita laudantium natus
               blanditiis ratione eius nisi, saepe incidunt? Reiciendis, unde.
             </div>
-            <div className="bg-white col-span-1">2</div>
+            <div className="bg-white col-span-1">Sponsoor</div>
           </div>
         </div>
       </section>

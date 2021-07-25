@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Techrev`,
-    description: `All type of techno blogs.`,
-    author: `@alkemy`,
+    description: `Techrev  is a blog portal for all kinds of digital solutions. We talk about WordPress, web development, digital marketing, SEO, Tools, and  Different Software.`,
+    author: `@alkemyhossain`,
   },
   plugins: [
     `gatsby-plugin-postcss`,

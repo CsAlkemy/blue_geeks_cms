@@ -23,7 +23,7 @@ const title = () => {
         <p>Wordpress</p>
         <p className="font-medium">July 23, 20</p>
       </div>
-      <div className="flex flex-row gap-2 pl-5 inline-flex">
+      <div className="flex flex-row gap-2 pl-5">
         <h3>Share: </h3>
         <Link to="/">
           <AiFillFacebook className=" h-5 w-5" />

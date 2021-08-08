@@ -8,20 +8,21 @@ import {
   AiFillCopy,
 } from "react-icons/ai"
 
-const title = () => {
+const title = props => {
   return (
     <>
       <div className="p-5 bg-black bg-opacity-50">
-        <h1 className="text-3xl font-medium capitalize  py-7">
-          Setup your wordpress site in 10 min.
-        </h1>
+        <h1 className="text-3xl font-medium capitalize  py-7">{props.title}</h1>
       </div>
       <div className="flex flex-row gap-2 pl-5 py-2">
-        <p>
-          <span className="font-semibold">By </span>Alkemy
+        <p className="font-semibold">
+          <span className="font-thin">By </span>
+          {props.author}
         </p>
-        <p>Wordpress</p>
-        <p className="font-medium">July 23, 20</p>
+        <p className="bg-black rounded-3xl px-2 text-sm my-auto">
+          #{props.category}
+        </p>
+        <p className="font-medium">{props.publish}</p>
       </div>
       <div className="flex flex-row gap-2 pl-5">
         <h3>Share: </h3>

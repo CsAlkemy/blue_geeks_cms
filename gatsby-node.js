@@ -14,7 +14,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   result.data.allContentfulBlog.nodes.forEach(blog => {
     actions.createPage({
-      path: `${blog.slug}/`,
+      path: `/blog/${blog.slug}/`,
       component: require.resolve("./src/components/Blog/blogParent.js"),
       context: {
         slug: blog.slug,

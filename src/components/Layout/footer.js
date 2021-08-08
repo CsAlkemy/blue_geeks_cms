@@ -108,6 +108,5 @@ export const buildTime = graphql`
     }
   }
 `
-console.log(buildTime)
 
 export default footer

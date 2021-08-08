@@ -67,7 +67,7 @@ const card = () => {
               {item.subtitle}
             </p>
             <div className="flex mx-auto gap-x-3 justify-between pt-4">
-              <p className="text-sm bg-cyan-500 rounded-lg px-2 text-white">
+              <p className="text-sm bg-black hover:bg-cyan-500 rounded-lg px-2 text-white">
                 # {item.tag}
               </p>
               <p className="text-sm text-right">{item.author}</p>

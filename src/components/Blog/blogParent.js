@@ -30,7 +30,6 @@ const blogParent = ({ data }) => {
         return <div className="text-2xl font-semibold py-2">{children}</div>
       },
       [INLINES.HYPERLINK]: (node, children) => {
-        console.log(node, children)
         return (
           <div className="hover:underline hover:bg-blue-300 p-1 inline">
             <a
@@ -52,11 +51,12 @@ const blogParent = ({ data }) => {
         )
       },
       [BLOCKS.EMBEDDED_ASSET]: node => {
+        console.log(node)
         return (
           <img
             className="py-5"
             src={node.data.target.fixed.src}
-            alt="hello"
+            alt={node.data.target.title}
           ></img>
         )
       },
@@ -140,6 +140,7 @@ export const pageQuery = graphql`
               ... on ContentfulAsset {
                 contentful_id
                 __typename
+                title
                 fixed(width: 1600, height: 600, quality: 10) {
                   width
                   height

@@ -1,10 +1,10 @@
 import { graphql } from "gatsby"
-import React from "react"
-import Title from "../Blog/title"
-import Layout from "../Layout/layout"
-import Seo from "../seo"
+import React, { Suspense } from "react"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+const Title = React.lazy(() => import("./title"))
+const Layout = React.lazy(() => import("../Layout/layout"))
+const Seo = React.lazy(() => import("../seo"))
 const blogParent = ({ data }) => {
   const options = {
     renderMark: {
@@ -73,43 +73,45 @@ const blogParent = ({ data }) => {
   }
 
   return (
-    <Layout>
-      <Seo title="Blog-Title" />
-      <main>
-        <section className="bg-cyan-300">
-          <div className="w-full lg:w-8/12 mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-5">
-              <div className="bg-black bg-opacity-25 p-5  h-full col-span-1 text-white md:col-span-4">
-                {" "}
-                <Title data={titleData} />
-              </div>
-              <div className="bg-black bg-opacity-25 py-5 pr-5  col-span-1 hidden md:inline">
-                <div className="bg-white h-full w-full">
-                  <div className="p-2">sponsorship</div>
+    <Suspense fallback={<div>Featching Blog....</div>}>
+      <Layout>
+        <Seo title="Blog-Title" />
+        <main>
+          <section className="bg-cyan-300">
+            <div className="w-full lg:w-8/12 mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-5">
+                <div className="bg-black bg-opacity-25 p-5  h-full col-span-1 text-white md:col-span-4">
+                  {" "}
+                  <Title data={titleData} />
+                </div>
+                <div className="bg-black bg-opacity-25 py-5 pr-5  col-span-1 hidden md:inline">
+                  <div className="bg-white h-full w-full">
+                    <div className="p-2">sponsorship</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="my-5">
-          <div className="w-full lg:w-8/12 mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 p-5 gap-y-3 md:gap-x-2 bg-gray-100">
-              <div className="col-span-3">
-                <img
-                  src={blogData.coverImage.fixed.src}
-                  alt={blogData.coverImage.title}
-                  className="w-full pr-0 md:pr-3"
-                />
-                <div className="my-10 mr-5">
-                  {renderRichText(blogData.blogBody, options)}
+          </section>
+          <section className="my-5">
+            <div className="w-full lg:w-8/12 mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-4 p-5 gap-y-3 md:gap-x-2 bg-gray-100">
+                <div className="col-span-3">
+                  <img
+                    src={blogData.coverImage.fixed.src}
+                    alt={blogData.coverImage.title}
+                    className="w-full pr-0 md:pr-3"
+                  />
+                  <div className="my-10 mr-5">
+                    {renderRichText(blogData.blogBody, options)}
+                  </div>
                 </div>
+                <div className="bg-white col-span-1">sponsorship</div>
               </div>
-              <div className="bg-white col-span-1">sponsorship</div>
             </div>
-          </div>
-        </section>
-      </main>
-    </Layout>
+          </section>
+        </main>
+      </Layout>
+    </Suspense>
   )
 }
 

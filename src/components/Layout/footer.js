@@ -72,13 +72,13 @@ const footer = ({ data }) => {
             </div>
             <div className="flex gap-1">
               <Link to="#" target="_blank" rel="noreferrer">
-                <AiFillFacebook className="h-7 w-7" />
+                <AiFillFacebook className="h-7 w-7" name="facebook" />
               </Link>
               <Link to="#" target="_blank" rel="noreferrer">
-                <AiFillLinkedin className="h-7 w-7" />
+                <AiFillLinkedin className="h-7 w-7" name="linkedin" />
               </Link>
               <Link to="#" target="_blank" rel="noreferrer">
-                <AiFillTwitterSquare className="h-7 w-7" />
+                <AiFillTwitterSquare className="h-7 w-7 name='twiteer" />
               </Link>
             </div>
           </div>

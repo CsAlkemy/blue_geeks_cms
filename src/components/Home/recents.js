@@ -1,9 +1,12 @@
+import { useAllContentfulBlogs } from "../../hooks/useAllContentfulBlogs"
 import React from "react"
 
 import Cards from "./cardVartical"
 import Sponsor from "./sponsor"
 
-const recents = () => {
+const Recents = () => {
+  const { edges } = useAllContentfulBlogs()
+  console.log(edges)
   return (
     <section className="py-10">
       <div className="w-11/12 lg:w-8/12 mx-auto pb-5">
@@ -24,5 +27,4 @@ const recents = () => {
     </section>
   )
 }
-
-export default recents
+export default Recents

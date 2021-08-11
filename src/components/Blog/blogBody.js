@@ -48,7 +48,6 @@ const blogBody = props => {
         )
       },
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        console.log(node)
         return (
           <img
             className="py-5"

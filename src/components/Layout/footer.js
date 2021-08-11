@@ -1,12 +1,11 @@
 import { MailIcon } from "@heroicons/react/outline"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import * as React from "react"
 import {
   AiFillFacebook,
   AiFillLinkedin,
   AiFillTwitterSquare,
 } from "react-icons/ai"
-import moment from "moment"
 
 const footer = ({ data }) => {
   return (
@@ -91,22 +90,10 @@ const footer = ({ data }) => {
           <span>
             <Link to="#"> BY &copy; TECHREV</Link>
           </span>
-          <p className="text-white text-xs font-thin">
-            {" "}
-            Last Modified {moment(data).format("Do MMM YYYY")}
-          </p>
         </div>
       </div>
     </div>
   )
 }
-
-export const buildTime = graphql`
-  query {
-    site(buildTime: {}) {
-      buildTime
-    }
-  }
-`
 
 export default footer

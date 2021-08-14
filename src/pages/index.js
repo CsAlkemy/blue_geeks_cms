@@ -1,6 +1,8 @@
 import * as React from "react"
 import Layout from "../components/Layout/layout"
 import Seo from "../components/seo"
+import "../styles/loader.css"
+
 const Hero = React.lazy(() => import("../components/Home/heroOne"))
 const HeroTwo = React.lazy(() => import("../components/Home/heroTwo"))
 const Feature = React.lazy(() => import("../components/Home/features"))

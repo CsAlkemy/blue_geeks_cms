@@ -4,7 +4,6 @@ import Seo from "../components/seo"
 import "../styles/loader.css"
 
 const Hero = React.lazy(() => import("../components/Home/heroOne"))
-const HeroTwo = React.lazy(() => import("../components/Home/heroTwo"))
 const Feature = React.lazy(() => import("../components/Home/features"))
 const Recents = React.lazy(() => import("../components/Home/recents"))
 const ViewedPost = React.lazy(() => import("../components/Home/viewedPost"))
@@ -24,7 +23,6 @@ const IndexPage = () => (
     <React.Suspense fallback={renderLoader()}>
       <div className="bg-black">
         <Hero />
-        <HeroTwo />
         <Feature />
         <Recents />
         <ViewedPost />

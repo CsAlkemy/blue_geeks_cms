@@ -5,68 +5,21 @@ import { Popover, Transition } from "@headlessui/react"
 import { Link } from "gatsby"
 import { HiOutlineUser, HiOutlineSearch } from "react-icons/hi"
 
+import { CategoryDataQuery } from "../../hooks/allContentfulCategory"
+
 import {
-  TerminalIcon,
-  TemplateIcon,
   MenuIcon,
-  VideoCameraIcon,
-  ShieldCheckIcon,
+  CheckCircleIcon,
   SupportIcon,
-  LightBulbIcon,
   XIcon,
 } from "@heroicons/react/outline"
 import {
   ChevronDownIcon,
   CodeIcon,
-  FingerPrintIcon,
   QuestionMarkCircleIcon,
   UserGroupIcon,
 } from "@heroicons/react/solid"
 
-const blogItems = [
-  {
-    name: "Website",
-    href: "#",
-    description:
-      "Website building tools like wordpress, wix, squarespace, weebly, domain, hosting, etc.",
-    icon: TerminalIcon,
-  },
-  {
-    name: "VPN",
-    href: "#",
-    description:
-      "Reviews, comparison between the virtual proxy network out there. And list of best VPN.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    name: "Themes",
-    href: "#",
-    description:
-      "Reviews and listing of top themes for wordpress, html & CSS and Admin themes.",
-    icon: TemplateIcon,
-  },
-  {
-    name: "Digital Product",
-    href: "#",
-    description:
-      "In depth review and comparison of some digital product like envato elements, Windows.",
-    icon: LightBulbIcon,
-  },
-  {
-    name: "Tubebuddy",
-    href: "#",
-    description:
-      "Tube Buddy Can Help You Manage, Optimize, And Grow Your Channel.",
-    icon: VideoCameraIcon,
-  },
-  {
-    name: "Hardware and sofware",
-    href: "#",
-    description:
-      "Other software and hardware that helps we do our day to day task.",
-    icon: FingerPrintIcon,
-  },
-]
 const resources = [
   {
     name: "FQA",
@@ -99,6 +52,7 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const { nodes } = CategoryDataQuery()
   return (
     <div className="sticky top-0 z-50">
       <Popover className="relative bg-background">
@@ -137,7 +91,7 @@ export default function Example() {
                           <ChevronDownIcon
                             className={classNames(
                               open ? "text-cyan-500" : "text-gray-50",
-                              "ml-2 h-5 w-5 group-hover:text-gray-50"
+                              "ml-2 h-7 w-7 group-hover:text-gray-50"
                             )}
                             aria-hidden="true"
                           />
@@ -159,23 +113,23 @@ export default function Example() {
                           >
                             <div className="rounded-lg shadow-lg ring-1 ring-white ring-opacity-5 overflow-hidden">
                               <div className="relative grid gap-6 bg-background px-5 py-6 sm:gap-8 sm:p-8">
-                                {blogItems.map(item => (
+                                {nodes.map(category => (
                                   <Link
-                                    to=""
-                                    key={item.name}
-                                    href={item.href}
+                                    to={`/category/${category.name}`}
+                                    key={category.id}
+                                    href={category.id}
                                     className="-m-3 p-3 flex items-start rounded-lg hover:bg-black"
                                   >
-                                    <item.icon
+                                    <CheckCircleIcon
                                       className="flex-shrink-0 h-6 w-6 text-gray-50"
                                       aria-hidden="true"
                                     />
                                     <div className="ml-4">
                                       <p className="text-base font-medium text-gray-50">
-                                        {item.name}
+                                        {category.name}
                                       </p>
                                       <p className="text-sm font-light text-gray-200">
-                                        {item.description}
+                                        {category.description}
                                       </p>
                                     </div>
                                   </Link>
@@ -244,24 +198,21 @@ export default function Example() {
                           >
                             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                               <div className="relative grid gap-6 bg-background px-5 py-6 sm:gap-8 sm:p-8 justify-items-start">
-                                {resources.map(item => (
+                                {nodes.map(category => (
                                   <Link
-                                    to=""
-                                    key={item.name}
-                                    href={item.href}
+                                    to={`/category/${category.name}`}
+                                    key={category.id}
                                     className="-m-3 p-3 flex items-start rounded-lg hover:bg-black"
                                   >
-                                    <item.icon
+                                    <CheckCircleIcon
                                       className="flex-shrink-0 h-6 w-6 text-white"
                                       aria-hidden="true"
                                     />
                                     <div className="ml-4">
                                       <p className="text-base font-medium text-gray-50">
-                                        {item.name}
+                                        {category.name}
                                       </p>
-                                      <p className="mt-1 text-sm text-gray-400">
-                                        {item.description}
-                                      </p>
+                                      <p className="mt-1 text-sm text-gray-400"></p>
                                     </div>
                                   </Link>
                                 ))}
@@ -318,19 +269,18 @@ export default function Example() {
                     </div>
                     <div className="mt-6">
                       <nav className="grid gap-y-8">
-                        {blogItems.map(item => (
+                        {nodes.map(category => (
                           <Link
-                            to=""
-                            key={item.name}
-                            href={item.href}
+                            to={`/category/${category.name}`}
+                            key={category.name}
                             className="-m-3 p-3 flex items-center rounded-md hover:bg-black"
                           >
-                            <item.icon
+                            <CheckCircleIcon
                               className="flex-shrink-0 h-6 w-6 text-gray-50"
                               aria-hidden="true"
                             />
                             <span className="ml-3 text-base font-medium text-gray-50">
-                              {item.name}
+                              {category.name}
                             </span>
                           </Link>
                         ))}

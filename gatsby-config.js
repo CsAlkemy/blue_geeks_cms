@@ -10,7 +10,6 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    `gatsby-disable-404`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

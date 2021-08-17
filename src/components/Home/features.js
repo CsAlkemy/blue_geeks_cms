@@ -1,9 +1,12 @@
 import React from "react"
+import { FeaturesBlogQuery } from "../../hooks/featuresAllContentful"
 
 // Local imports
-import Card from "./card"
+import Card from "../Common/verticalCard"
 
 const features = () => {
+  const { nodes } = FeaturesBlogQuery()
+  const data = nodes
   return (
     <section className="py-10">
       <div className="w-11/12 lg:w-8/12 mx-auto pb-5">
@@ -13,7 +16,7 @@ const features = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 text-black gap-4">
-          <Card />
+          <Card data={data} />
         </div>
       </div>
     </section>

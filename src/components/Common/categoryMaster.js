@@ -1,30 +1,21 @@
 import { graphql } from "gatsby"
-import React from "react"
+import React, { Suspense } from "react"
 import Layout from "../Layout/layout"
 import Seo from "../seo"
+import Loader from "../Common/loaderSpin"
+
+const PageBanner = React.lazy(() => import("../Common/pageBannner"))
+const Blogs = React.lazy(() => import("../Common/roundedCard"))
 
 const categoryMaster = ({ data }) => {
   const categoryData = data.allContentfulCategory.nodes[0]
   return (
     <Layout>
       <Seo title="Category name" />
-      <div className=" h-96 overflow-hidden relative">
-        <img
-          className="absolute inset-0 h-full w-full object-cover"
-          src={categoryData.coverImage.fixed.src}
-          alt={categoryData.coverImage.title}
-          srcSet={categoryData.coverImage.fixed.srcSet}
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-75"></div>
-        <div className="flex flex-col text-white h-full items-center justify-center relative">
-          <h1 className="text-7xl font-bold my-5 text-teal-100 tracking-wider">
-            {categoryData.name}
-          </h1>
-          <p className="text-lg tracking-normal md:tracking-wider mx-5 md:mx-0 text-center md:text-left">
-            {categoryData.description}
-          </p>
-        </div>
-      </div>
+      <Suspense fallback={<Loader />}>
+        <PageBanner data={categoryData} />
+        <Blogs data={categoryData.id} />
+      </Suspense>
     </Layout>
   )
 }

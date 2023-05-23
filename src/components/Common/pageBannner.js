@@ -6,17 +6,17 @@ const pageBannner = props => {
     <div className=" h-96 overflow-hidden relative">
       <img
         className="absolute inset-0 h-full w-full object-cover"
-        src={props.data.coverImage.fixed.src}
-        alt={props.data.coverImage.title}
-        srcSet={props.data.coverImage.fixed.srcSet}
+        src={props?.data?.coverImage?.fixed?.src}
+        alt={props?.data?.coverImage?.title}
+        srcSet={props?.data?.coverImage?.fixed?.srcSet}
       />
       <div className="absolute inset-0 bg-black bg-opacity-75"></div>
       <div className="flex flex-col text-white h-full items-center justify-center relative">
         <h1 className="text-7xl font-bold my-5 text-center text-teal-100 tracking-wider">
-          {props.data.name}
+          {props?.data?.name}
         </h1>
         <p className="text-xl text-gray-50 mt-5 tracking-normal mx-5 md:mx-0 text-center md:text-left">
-          {props.data.description}
+          {props?.data?.description}
         </p>
         <div className="mt-5 sm:mt-8 flex justify-center ">
           <div className="rounded-md shadow">

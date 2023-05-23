@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 //in component graphql query to fetch data based onn specific id
 
 const roundedCard = props => {
-  console.log(props.data)
+  console.log(props?.data)
   return (
     <div className="max-h-full pb-20 md:max-w-4/5 mx-5 md:mx-auto text-black">
       <div className="container mx-auto mt-5 p-2 md:p-20 grid md:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 transform duration-500">

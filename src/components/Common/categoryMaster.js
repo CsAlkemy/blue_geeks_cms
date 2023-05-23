@@ -1,21 +1,17 @@
 import { graphql } from "gatsby"
-import React, { Suspense } from "react"
+import React from "react"
 import Layout from "../Layout/layout"
 import Seo from "../seo"
-import Loader from "../Common/loaderSpin"
-
-const PageBanner = React.lazy(() => import("../Common/pageBannner"))
-const Blogs = React.lazy(() => import("../Common/roundedCard"))
+import PageBanner from "../Common/pageBannner"
+import Blogs from "../Common/roundedCard"
 
 const categoryMaster = ({ data }) => {
   const categoryData = data.allContentfulCategory.nodes[0]
   return (
     <Layout>
       <Seo title="Category name" />
-      <Suspense fallback={<Loader />}>
         <PageBanner data={categoryData} />
         <Blogs data={categoryData.id} />
-      </Suspense>
     </Layout>
   )
 }

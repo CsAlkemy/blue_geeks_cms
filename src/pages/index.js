@@ -3,24 +3,16 @@ import Layout from "../components/Layout/layout"
 import Seo from "../components/seo"
 import "../styles/loader.css"
 
-const Hero = React.lazy(() => import("../components/Home/heroOne"))
-const Feature = React.lazy(() => import("../components/Home/features"))
-const Recents = React.lazy(() => import("../components/Home/recents"))
-const ViewedPost = React.lazy(() => import("../components/Home/viewedPost"))
-const Newsletter = React.lazy(() => import("../components/Home/emailList"))
+import Hero from "../components/Home/heroOne"
+import Feature from "../components/Home/features"
+import Recents from "../components/Home/recents"
+import ViewedPost from "../components/Home/viewedPost"
+import Newsletter from "../components/Home/emailList"
 
-const renderLoader = () => {
+const IndexPage = () => {
   return (
-    <div className="flex justify-center items-center">
-      <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-900 h-14 w-14 my-24"></div>
-    </div>
-  )
-}
-
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <React.Suspense fallback={renderLoader()}>
+    <Layout>
+      <Seo title="Home" />
       <div className="bg-black">
         <Hero />
         <Feature />
@@ -28,8 +20,8 @@ const IndexPage = () => (
         <ViewedPost />
         <Newsletter />
       </div>
-    </React.Suspense>
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 export default IndexPage

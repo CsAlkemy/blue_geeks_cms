@@ -1,10 +1,9 @@
 import { graphql } from "gatsby"
-import React, { Suspense } from "react"
+import React from "react"
 import Seo from "../seo"
 import Layout from "../Layout/layout"
-import Loader from "../Common/loaderSpin"
-const Title = React.lazy(() => import("./title"))
-const BlogBody = React.lazy(() => import("./blogBody"))
+import Title from "./title"
+import BlogBody from"./blogBody"
 
 const blogParent = ({ data }) => {
   //data manupulation
@@ -25,9 +24,7 @@ const blogParent = ({ data }) => {
             <div className="grid grid-cols-1 md:grid-cols-5">
               <div className="bg-black bg-opacity-25 p-5  h-full col-span-1 text-white md:col-span-4">
                 {" "}
-                <Suspense fallback={<Loader />}>
                   <Title data={titleData} />
-                </Suspense>
               </div>
               <div className="bg-black bg-opacity-25 py-5 pr-5  col-span-1 hidden md:inline">
                 <div className="bg-white h-full w-full">
@@ -47,9 +44,7 @@ const blogParent = ({ data }) => {
                   className="w-full pr-0 md:pr-3"
                 />
                 <div className="my-10 mr-5">
-                  <Suspense fallback={<Loader />}>
                     <BlogBody data={blogData.blogBody} />
-                  </Suspense>
                 </div>
               </div>
               <div className="bg-white col-span-1">sponsorship</div>

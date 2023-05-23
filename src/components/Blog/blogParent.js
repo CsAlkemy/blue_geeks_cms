@@ -8,17 +8,17 @@ const BlogBody = React.lazy(() => import("./blogBody"))
 
 const blogParent = ({ data }) => {
   //data manupulation
-  const blogData = data.allContentfulBlog.edges[0].node
+  const blogData = data.allContentfulBlog?.edges[0]?.node
   const titleData = {
-    title: blogData.title,
-    author: blogData.author.name,
-    publish: blogData.publishingDate,
-    category: blogData.category[0].name,
+    title: blogData?.title,
+    author: blogData?.author.name,
+    publish: blogData?.publishingDate,
+    category: blogData?.category[0].name,
   }
 
   return (
     <Layout>
-      <Seo title={blogData.title} />
+      <Seo title={blogData?.title} />
       <main>
         <section className="bg-cyan-300">
           <div className="w-full lg:w-8/12 mx-auto">
@@ -42,13 +42,13 @@ const blogParent = ({ data }) => {
             <div className="grid grid-cols-1 md:grid-cols-4 p-5 gap-y-3 md:gap-x-2 bg-gray-100">
               <div className="col-span-3">
                 <img
-                  src={"https://" + blogData.coverImage.fixed.src}
-                  alt={blogData.coverImage.title}
+                  src={"https://" + blogData?.coverImage?.fixed.src}
+                  alt={blogData?.coverImage?.title}
                   className="w-full pr-0 md:pr-3"
                 />
                 <div className="my-10 mr-5">
                   <Suspense fallback={<Loader />}>
-                    <BlogBody data={blogData.blogBody} />
+                    <BlogBody data={blogData?.blogBody} />
                   </Suspense>
                 </div>
               </div>

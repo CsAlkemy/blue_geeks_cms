@@ -22,9 +22,9 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: "c0b6ropwh6jm",
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
         environment: "master",
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {

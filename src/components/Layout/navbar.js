@@ -143,21 +143,19 @@ export default function Example() {
                   </Popover>
 
                   <Link
-                    to="/blogCategory"
+                    to="/techBlog"
                     className="text-base font-medium hover:text-cyan-500 text-white"
                   >
                     TECH
                   </Link>
                   <Link
-                    to=""
-                    href="#"
+                    to="/reviewPost"
                     className="text-base font-medium hover:text-cyan-500 text-white"
                   >
                     REVIEWS
                   </Link>
                   <Link
-                    to=""
-                    href="#"
+                    to="/sciencePost"
                     className="text-base font-medium hover:text-cyan-500 text-white"
                   >
                     SCIENCE

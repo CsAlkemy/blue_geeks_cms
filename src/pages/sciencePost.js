@@ -1,10 +1,16 @@
 import React from "react"
+import Layout from "../components/Layout/layout";
+import Seo from "../components/seo";
+import UnderConstraction from "../components/Common/under-constraction";
 
 const sciencePost = () => {
   return (
-    <div>
-      <h1>Science Peps</h1>
-    </div>
+      <Layout>
+          <Seo title="Science" />
+          <div className="bg-white">
+              <UnderConstraction />
+          </div>
+      </Layout>
   )
 }
 

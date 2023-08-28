@@ -42,7 +42,7 @@ const blogBody = props => {
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         return (
-          <div className="text-base font-light text-justify py-5">
+          <div className="text-base font-normal text-justify py-5 leading-7">
             {children}
           </div>
         )
@@ -50,7 +50,7 @@ const blogBody = props => {
       [BLOCKS.EMBEDDED_ASSET]: node => {
         return (
           <img
-            className="py-5"
+            className="p-10 object-cover"
             src={"https://" + node.data.target.fixed.src}
             alt={node.data.target.title}
           ></img>
